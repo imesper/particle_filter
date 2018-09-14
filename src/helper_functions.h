@@ -28,6 +28,29 @@ struct control_s {
 	double yawrate;		// Yaw rate [rad/s]
 };
 
+/**
+ * @brief transform_x
+ * @param theta
+ * @param x
+ * @param y
+ * @param x_t
+ * @return
+ */
+inline double transform_x(double theta, double x, double y, double x_t ){
+    return x*cos(theta)-y*sin(theta)+x_t;
+}
+/**
+ * @brief transform_y
+ * @param theta
+ * @param x
+ * @param y
+ * @param y_t
+ * @return
+ */
+inline double transform_y(double theta, double x, double y, double y_t ){
+    return x*sin(theta)+y*cos(theta)+y_t;
+}
+
 /*
  * Struct representing one ground truth position.
  */
